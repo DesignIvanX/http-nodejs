@@ -1,10 +1,10 @@
 const store = require("./store");
 
-const listUser = (career) => {
-  return new Promise((res, rej) => {
-    return res(store.list(career));
-  });
-};
+// const listUser = (career) => {
+//   return new Promise((res, rej) => {
+//     return res(store.list(career));
+//   });
+// };
 
 const addUser = (name, email, career) => {
   return new Promise((res, rej) => {

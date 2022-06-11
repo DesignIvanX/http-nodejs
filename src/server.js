@@ -29,5 +29,5 @@ router(app);
 app.use("/", express.static("public"));
 // Port
 app.listen(app.get("PORT"), () => {
-  console.log("Port is " + app.get("PORT"));
+  console.log("Is connect");
 });
