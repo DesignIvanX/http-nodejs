@@ -40,6 +40,6 @@ const deleteUser = (id) => {
 
 module.exports = {
   add: addUser,
-  list: listUser,
+  // list: listUser,
   delete: deleteUser,
 };

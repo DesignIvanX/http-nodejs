@@ -22,6 +22,6 @@ const deleteUser = (id) => {
 
 module.exports = {
   list: listUser,
-  add: addUser,
+  // add: addUser,
   delete: deleteUser,
 };
