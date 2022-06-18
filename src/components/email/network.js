@@ -3,10 +3,8 @@ const template = require("./template");
 const response = require("../../network/response");
 
 exports.sendEmail = (req, res, name, email, career) => {
-  console.log(name, email, career);
-  nodemailer
     .createTestAccount((err, account) => {
-      const htmlEmail = template.emailTemplate(name, career);
+      const htmlEmail = `${name, email}`
       const transporter = nodemailer.createTransport({
         host: "smtppro.zoho.com",
         port: 465,
