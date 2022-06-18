@@ -3,6 +3,7 @@ const template = require("./template");
 const response = require("../../network/response");
 
 exports.sendEmail = (req, res, name, email, career) => {
+  console.log(name, email, career);
   nodemailer.createTestAccount((err, account) => {
     const htmlEmail = template.emailTemplate(name, career);
     const transporter = nodemailer.createTransport({
@@ -18,7 +19,7 @@ exports.sendEmail = (req, res, name, email, career) => {
       from: "info@uhg.edu.py",
       to: email,
       replyTo: email,
-      subject: `Hola ${name}! Te saluda la Universidad Hispano Guarani`,
+      subject: `Hola ${name}! Universidad Hispano Guarani`,
       html: htmlEmail,
     };
     transporter

@@ -5,14 +5,15 @@
   "author": "ivandcdesign",
   "license": "MIT",
   "scripts": {
-    "start": "node ./src/server.js"
+    "start": "node ./src/server.js",
+    "build": "nodemon ./src/server.js"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.1",
-    "mongoose": "^6.3.6",
-    "morgan": "^1.10.0",
-    "nodemailer": "^6.7.5",
-    "nodemon": "^2.0.16"
+    "cors": "2.8.5",
+    "express": "4.18.1",
+    "mongoose": "6.3.6",
+    "morgan": "1.10.0",
+    "nodemailer": "6.7.5",
+    "nodemon": "2.0.16"
   }
 }
