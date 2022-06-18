@@ -1,6 +1,7 @@
 const express = require("express");
 const controller = require("./controller");
 const response = require("../../network/response");
+const mail = require("../email/network");
 const router = express.Router();
 
 router.post("/", (req, res) => {
@@ -8,7 +9,7 @@ router.post("/", (req, res) => {
   controller
     .add(name, email, career)
     .then((data) => {
-      response.sendEmail(req, res, name, email, career);
+      mail.sendEmail(req, res, name, email, career);
       response.success(req, res, data, 201, "[Success] - created correctly!");
     })
     .catch((e) => {
