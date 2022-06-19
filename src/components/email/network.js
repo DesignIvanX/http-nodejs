@@ -6,12 +6,12 @@ exports.sendEmail = (req, res, name, email, career) => {
   nodemailer.createTestAccount((err, account) => {
     const htmlEmail = template.emailTemplate(name, career);
     const transporter = nodemailer.createTransport({
-      host: "smtppro.zoho.com",
+      host: "",
       port: 465,
       secure: true,
       auth: {
-        user: "info@uhg.edu.py",
-        pass: "iOAyhAbqEB",
+        user: "",
+        pass: "",
       },
     });
     const emailOptions = {
