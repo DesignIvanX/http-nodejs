@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
-const url =
-  process.env.DB_NAME ||
-  "mongodb+srv://admin:admin1223x@cluster0.iv3vu.mongodb.net/users";
+const url = process.env.DB_NAME;
 
 mongoose.connect(url, { useNewUrlParser: true });
 mongoose.connection
