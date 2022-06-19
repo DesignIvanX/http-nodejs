@@ -1,35 +1,19 @@
-const nodemailer = require("nodemailer");
-const template = require("./template");
-const response = require("../../network/response");
+const Emailer = require("google-zoho-node-mailer");
 
 exports.sendEmail = (req, res, name, email, career) => {
-  nodemailer.createTestAccount((err, account) => {
-    const htmlEmail = template.emailTemplate(name, career);
-    const transporter = nodemailer.createTransport({
-      host: "smtppro.zoho.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: "info@uhg.edu.py",
-        pass: "iOAyhAbqEB",
-      },
-    });
-    const emailOptions = {
-      from: "info@uhg.edu.py",
-      to: email,
-      replyTo: email,
-      subject: `Hola ${name}! Universidad Hispano Guarani`,
-      html: htmlEmail,
-    };
-    transporter
-      .sendMail(emailOptions)
-      .then((data) => {
-        console.log(data);
-        response.success(req, res, data, 200);
-      })
-      .catch((err) => {
-        console.log(err);
-        response.error(req, res, err, 500, "Error");
-      });
+  Emailer.UseZohoSMTPTransport({
+    username: process.env.USER,
+    password: process.env.PASSWORD,
+  });
+
+  var message = new Emailer.Email({
+    from: '"Universidad Hispano Guarani" <info@uhg.edu.py>',
+    to: email,
+    subject: `Hola ${name}! Universidad Hispano Guarani`,
+    html: `<b>Time:</b> <p>email body</p>`,
+  });
+
+  message.send(function (status) {
+    console.log(status);
   });
 };

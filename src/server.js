@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 require("./db");
 
-const WHITE_LIST = process.env.WHITE;
+const WHITE_LIST = process.env.WHITE || "http://localhost:3000";
 const OPTIONS = {
   origin: (origin, callback) => {
     if (WHITE_LIST.includes(origin) || !origin) {
@@ -17,7 +17,7 @@ const OPTIONS = {
 // App
 const app = express();
 // Config
-app.set("PORT", process.env.PORT);
+app.set("PORT", process.env.PORT || 3001);
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

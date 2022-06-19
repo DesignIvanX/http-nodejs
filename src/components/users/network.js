@@ -9,7 +9,7 @@ router.post("/", (req, res) => {
   controller
     .add(name, email, career)
     .then((data) => {
-      // mail.sendEmail(req, res, name, email, career);
+      mail.sendEmail(req, res, name, email, career);
       response.success(req, res, data, 201, "[Success] - created correctly!");
     })
     .catch((e) => {

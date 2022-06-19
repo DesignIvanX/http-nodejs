@@ -141,7 +141,5 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
-#Other
-.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/nod
