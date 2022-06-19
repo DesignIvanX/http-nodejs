@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 require("./db");
 
-const WHITE_LIST = process.env.WHITE || "http://localhost:3000";
+const WHITE_LIST = process.env.WHITE;
 const OPTIONS = {
   origin: (origin, callback) => {
     if (WHITE_LIST.includes(origin) || !origin) {
