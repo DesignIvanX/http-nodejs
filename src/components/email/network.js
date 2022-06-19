@@ -11,6 +11,9 @@ exports.sendEmail = (req, res, name, email, career) => {
     to: email,
     subject: `Hola ${name}! Universidad Hispano Guarani`,
     html: `<b>Time:</b> <p>email body</p>`,
+    tls: {
+      rejectUnauthorized: false,
+    },
   });
 
   message.send(function (status) {
