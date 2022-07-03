@@ -7,7 +7,7 @@ const getUser = (email) => {
 
 const addUser = (data) => {
   const UserExist = getUser(data.email);
-  console.log(UserExist);
+  console.log(UserExist, "HOLAS QUE TALS");
   if (UserExist) {
     return "Ya estas registrado/a!!";
   }
