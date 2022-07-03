@@ -4,8 +4,22 @@ const response = require("../../network/response");
 const mail = require("../email/network");
 const router = express.Router();
 
+router.get("/", (req, res) => {
+  const { email } = req.query;
+
+  controller
+    .get(email)
+    .then((data) => {
+      response.success(req, res, data, 200, "[Success] - get users correctly!");
+    })
+    .catch((e) => {
+      response.success(req, res, e, 500, "[Internal Error] - not get users.");
+    });
+});
+
 router.post("/", (req, res) => {
   const { name, email, career } = req.body;
+
   controller
     .add(name, email, career)
     .then((data) => {

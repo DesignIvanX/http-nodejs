@@ -1,7 +1,7 @@
 const Model = require("./model");
 
 const getUser = (email) => {
-  const user = Model.getOne({ email: { $eq: email } });
+  const user = Model.find({ email: email });
   return user;
 };
 
