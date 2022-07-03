@@ -50,7 +50,7 @@ const deleteUser = (id) => {
 };
 
 module.exports = {
-  get: getUser,
+  // get: getUser,
   add: addUser,
   delete: deleteUser,
 };
