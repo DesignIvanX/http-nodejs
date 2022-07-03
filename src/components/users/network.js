@@ -4,6 +4,24 @@ const response = require("../../network/response");
 const mail = require("../email/network");
 const router = express.Router();
 
+// router.get("/", (req, res) => {
+//   const { id } = req.query;
+//   controller
+//     .add(id)
+//     .then((data) => {
+//       response.success(req, res, data, 200, "[Success] - get correctly!");
+//     })
+//     .catch((e) => {
+//       response.success(
+//         req,
+//         res,
+//         e,
+//         500,
+//         "[Internal Error] - could not be created."
+//       );
+//     });
+// });
+
 router.post("/", (req, res) => {
   const { name, email, career } = req.body;
   controller
