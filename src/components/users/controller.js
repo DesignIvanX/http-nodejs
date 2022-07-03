@@ -1,26 +1,15 @@
 const store = require("./store");
 
-// const getUser = (id) => {
-//   return new Promise((res, rej) => {
-//     if (!id) {
-//       console.error("[controllerUsers] Internal Error (getUser)");
-//       return rej("Internal Error");
-//     }
-//     store
-//       .get(id)
-//       .then((id) => {
-//         return res(id);
-//       })
-//       .catch((e) => {
-//         return rej(e);
-//       });
-//   });
-// };
-
 const addUser = (name, email, career) => {
   return new Promise((res, rej) => {
     if (!name || !email || !career) {
       console.error("[controllerUsers] Internal Error (addUser)");
+      return rej("Internal Error");
+    }
+    if (store.get(email)) {
+      console.error(
+        "[controllerUsers] Internal Error (addUser) - User already exists"
+      );
       return rej("Internal Error");
     }
     const user = {
@@ -50,7 +39,6 @@ const deleteUser = (id) => {
 };
 
 module.exports = {
-  // get: getUser,
   add: addUser,
   delete: deleteUser,
 };

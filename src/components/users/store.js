@@ -6,11 +6,6 @@ const getUser = (email) => {
 };
 
 const addUser = (data) => {
-  const UserExist = getUser(data.email);
-  console.log(UserExist, "HOLAS QUE TALS");
-  if (UserExist) {
-    return "Ya estas registrado/a!!";
-  }
   const myUser = new Model(data);
   return myUser.save();
 };
@@ -20,7 +15,7 @@ const deleteUser = (id) => {
 };
 
 module.exports = {
-  // get: getUser,
+  get: getUser,
   add: addUser,
   delete: deleteUser,
 };
